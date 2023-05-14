@@ -17,12 +17,12 @@ file(GLOB SOURCE_FILES
 add_library(HobbyEngine STATIC ${SOURCE_FILES})
 
 # SDL取り込む
-add_subdirectory(./Dependencies/SDLModule/SDL)
+add_subdirectory(${HobbyEngine_SOURCE_DIR}/Dependencies/SDLModule/SDL)
 
 # C++ 17を利用
 target_compile_features(HobbyEngine PRIVATE cxx_std_17)
 # includeディレクトリを利用者側から#includeで取り込めるようにしている
-target_include_directories(HobbyEngine INTERFACE ./include)
+target_include_directories(HobbyEngine INTERFACE ${HobbyEngine_SOURCE_DIR}/include)
 
 set (SDL3_DIR "${HobbyEngine_SOURCE_DIR}/Dependencies/SDLModule/SDL")
 target_include_directories(HobbyEngine PRIVATE
