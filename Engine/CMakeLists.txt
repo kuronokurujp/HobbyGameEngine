@@ -8,9 +8,13 @@ project(HobbyEngine
 
 message("project name is automaically set as: ${PROJECT_NAME}")
 
+# General source files
+file(GLOB SOURCE_FILES
+  ${HobbyEngine_SOURCE_DIR}/Source/*.cpp)
+
 # C++のコンパイル対象のc++コードファイルを指定
 # 静的ライブラリで作成
-add_library(HobbyEngine STATIC ./Source/Engine.cpp)
+add_library(HobbyEngine STATIC ${SOURCE_FILES})
 
 # SDL取り込む
 add_subdirectory(./Dependencies/SDLModule/SDL)
