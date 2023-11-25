@@ -1,13 +1,23 @@
 # HobbyGameEngine
 
+## 目的
+- ゲームエンジニアのスキルを向上
+    - 現在のゲーム開発はUnity / Unreal Engineがメインになっているが,<br>
+      これの利用ばかりではエンジニアとしてのスキルが上がらないし,<br>
+      エンジンがなければゲームが作れない状態になってしまい,<br>
+      偏ったスキルになるのを防ぐため<br>
+      
+- 技術実験
+    - レンダリングやAIなど公開されているOSS / SDKを使ってどのような事ができるかの実験
+
 ## 実行環境
 |OS|ビルドツール|コンパイル|
 |:---:|:---:|:---:|
 |Windows10|CMake|gcc(MinGW64を利用)|
 
 ## ThirdParty
-- SDL3.0
-    - https://github.com/libsdl-org/SDL
+- [SDL3.0](https://github.com/libsdl-org/SDL)
+- [Boost]()
     
 ## ビルド環境構築
 - CMakeをインストール
@@ -76,4 +86,6 @@
         - https://kamino.hatenablog.com/entry/cmake_tutorial2
 - SDLの扱いについて説明している神サイト
     - https://lazyfoo.net/tutorials/SDL/index.php
+- int / charの代わりの型int32_tなどについて
+    - https://qiita.com/bluepost59/items/27ce77258611f0c273a3
     

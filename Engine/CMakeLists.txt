@@ -17,7 +17,7 @@ file(GLOB SOURCE_FILES
 add_library(HobbyEngine STATIC ${SOURCE_FILES})
 
 # SDL取り込む
-add_subdirectory(${HobbyEngine_SOURCE_DIR}/Dependencies/SDLModule/SDL)
+add_subdirectory(Dependencies/SDLModule/SDL)
 
 # C++ 17を利用
 target_compile_features(HobbyEngine PRIVATE cxx_std_17)
@@ -34,6 +34,7 @@ set (SDL_DLLFILE ${SDL3_BIN_DIR}/SDL3.dll)
 # SDL3.dllをBuildディレクトリにインストール
 install(FILES ${SDL_DLLFILE} DESTINATION ${CMAKE_BINARY_DIR})
 
+
 # すでにビルド済みのSDLのdllファイルがあればそれを参照
 # 初期環境構築ではBuildディレクトリにSDLのDllファイルがない事でインストールが失敗するための対策
 set (SDL_LINK_DLLFILE ${CMAKE_BINARY_DIR}/SDL3.dll)
@@ -47,3 +48,4 @@ target_link_libraries(HobbyEngine
     # OpenGLを利用予定
     OpenGL32
 )
+

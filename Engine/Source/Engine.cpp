@@ -1,11 +1,22 @@
 #include "../Include/Engine.h"
 
+#include "../Include/Platform/Windows/Windows.h"
+
 #include <stdio.h>
+#include <iostream>
 #include <SDL3/SDL.h>
+
+// NOTE: Boostのテスト
+//#include <boost/filesystem.hpp>
 
 const HobbyEngine::InitResultCode HobbyEngine::Initialize()
 {
     printf("init\n");
+	// NOTE: Boostのテスト
+//	std::cout << boost::filesystem::current_path() << std::endl;
+	
+	// TODO: プラットフォームに合わせたシステムのインスタンスを作成
+	mpPlatformInterface = new Platform::Windows();
 
 	int SdlResult = SDL_Init(SDL_INIT_VIDEO);
 	if (SdlResult != 0)
